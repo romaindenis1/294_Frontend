@@ -18,7 +18,7 @@
             <img v-bind:src="image" />
           </div>
           <div class="product-info">
-            <h1>{{ product }}</h1>
+            <h1>{{ title }}</h1>
 
             <p v-if="inventory < 10 && inventory > 0">Almost sold out!</p>
             <p v-else-if="inventory > 0">In stock</p>
@@ -32,12 +32,12 @@
             <div v-for="size in sizes" :key="sizes.id">{{ size.size }}</div>
             <br />
             <div
-              v-for="variant in variants"
+              v-for="(variant, index) in variants"
               :key="variant.id"
-              @mouseover="updateImage(variant.image)"
-            >
-              {{ variant.color }}
-            </div>
+              @mouseover="updateVariant(index)"
+              class="color-circle"
+              :style="{ backgroundColor: variant.color }"
+            ></div>
 
             <a v-bind:href="url">Lien</a>
           </div>
