@@ -40,6 +40,7 @@ app.component("product-display", {
   data() {
     return {
       product: "Socks",
+      cart: [],
       brand: "Vue Mastery",
       selectedVariant: 0,
       details: ["50% cotton", "30% wool", "20% polyester"],
@@ -61,7 +62,7 @@ app.component("product-display", {
   },
   methods: {
     addToCart() {
-      this.cart += 1;
+      this.$emit("add-to-cart", this.variants[this.selectedVariant].id);
     },
     updateVariant(index) {
       this.selectedVariant = index;
