@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WIP</title>
+    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ title }}</h1>
+      <p>{{ desc }}</p>
+      <div class="cart">
+        <h2>🛒 Mon Panier {{ cart.length }}</h2>
+        <ul>
+          <li v-for="gadget in cart">
+            {{gadget.nom}} - {{gadget.prix}}
+            <button class="remove-btn" @click="removeFromCart(gadget)">
+              ❌
+            </button>
+          </li>
+          <p>Total: {{total}}</p>
+        </ul>
+        <p v-if="cart.length <= 0">Votre panier est vide.</p>
+      </div>
+
+      <div class="gadget-container">
+        <div v-for="gadget in gadgets" class="gadget">
+          <img src />
+          <h2>{{ gadget.nom }}</h2>
+          <p>{{ gadget.prix }}</p>
+          <img v-bind:src="gadget.image" alt="" />
+          <p v-if="gadget.inStock">En stock</p>
+          <p v-else>Pas en stock</p>
+          <button @click="addToCart(gadget)" v-if="gadget.inStock">
+            Ajouter au panier
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+    <script>
+      const mountedApp = app.mount("#app");
+    </script>
+  </body>
+</html>
