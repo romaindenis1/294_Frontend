@@ -11,7 +11,7 @@ app.component("cart-display", {
               ❌
             </button>
           </li>
-          <p>Total: {{total}}</p>
+          <p>Total: {{ total }}</p>
         </ul>
         <p v-if="cart.length <= 0">Votre panier est vide.</p>`,
   methods: {
