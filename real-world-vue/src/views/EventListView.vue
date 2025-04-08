@@ -5,7 +5,7 @@ import { ref } from 'vue'
 const events = ref([
   {
     id: 5928101,
-    category: 'Animal welfare',
+    category: 'animal welfare',
     title: 'Cat Adoption Day',
     description: 'Find your new feline friend at this event.',
     location: 'Meow Town',
@@ -27,7 +27,7 @@ const events = ref([
   },
   {
     id: 8419988,
-    category: 'Sustainability',
+    category: 'sustainability',
     title: 'Beach Cleanup',
     description: 'Help pick up trash along the shore.',
     location: 'Playa Del Carmen',
